@@ -24,7 +24,8 @@
 
 class hpcmp::openssh($hpc_cluster_host_patterns) {
     include hpcmp::kerberos
-    include "hpcmp::openssh::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "hpcmp::openssh::${lower_osfamily}"
 
 # This define implements for a set of hosts some of the settings Vern Staats
 # set out on 1 May 2012. In the original configuration they are applied to all

@@ -18,5 +18,6 @@
 # Configuration necessary to get an HPCMP Kerberos ticket.
 
 class hpcmp::kerberos {
-    include "hpcmp::kerberos::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "hpcmp::kerberos::${lower_osfamily}"
 }
