@@ -23,7 +23,7 @@ class hpcmp::kerberos::redhat {
 # in getting HPCMP Kerberos tickets. So we want to explicitly use an
 # HPCMP-specific configuration when doing HPCMP Kerberos.
     file { '/etc/profile.d/hpc_krb5.sh':
-        owner => bin, group => 0, mode => 0444,
+        owner => bin, group => 0, mode => '0444',
         content => "\
 hpc_krb5=/usr/local/hpc_krb5
 export PATH=\$hpc_krb5/bin:\$PATH
